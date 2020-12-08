@@ -201,10 +201,10 @@ namespace groveoleddisplay {
 
         /*private*/ putChar(c:number) {
             if (c < 32 || c > 127) {
-                cx = 0; // space
+                let cx = 0; // space
             }
             else {
-                cx = c-32;
+                let cx = c-32;
             }
 
             for(let i=0; i< 8;i++){
