@@ -127,8 +127,7 @@ namespace groveoleddisplay {
             buf[0] = 0x40; // SeeedGrayOLED_Data_Mode
             buf[1] = data;
 
-            // pins.i2cWriteBuffer(0x3c, buf, false);
-            pins.i2cWriteBuffer(0x3c, buf);
+            pins.i2cWriteBuffer(0x3c, buf, false);
         }
 
         private sendCommand(cmd:number) {
@@ -137,8 +136,7 @@ namespace groveoleddisplay {
             buf[0] = 0x80;  // SeeedGrayOLED_Command_Mode
             buf[1] = cmd;
 
-            //pins.i2cWriteBuffer(0x3c, buf, false);
-            pins.i2cWriteBuffer(0x3c, buf);
+            pins.i2cWriteBuffer(0x3c, buf, false);
         }
 
         /**
@@ -201,7 +199,7 @@ namespace groveoleddisplay {
             }
         }
 
-        private putChar(c:number) {
+        /*private*/ putChar(c:number) {
             if (c < 32 || c > 127) {
                 c = 0; // space
             }
