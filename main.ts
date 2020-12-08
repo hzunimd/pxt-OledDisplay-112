@@ -200,15 +200,12 @@ namespace groveoleddisplay {
         }
 
         /*private*/ putChar(c:number) {
+            let ci = c-32;
             if (c < 32 || c > 127) {
-                let cx = 0; // space
+                let ci = 0; // space
             }
-            else {
-                let cx = c-32;
-            }
-
             for(let i=0; i< 8;i++){
-                this.sendData(oledFont[cx*8+i]);
+                this.sendData(oledFont[ci*8+i]);
             }
         }
 
